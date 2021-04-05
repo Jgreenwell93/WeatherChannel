@@ -1,0 +1,12 @@
+.jumbotron{
+    display:flex;
+    justify-content: center;
+    background-color: rgb(76, 76, 247);
+    background-image: 
+    linear-gradient(
+        to right,
+        rgb(76, 76, 247), rgb(136, 49, 136)
+        );
+    color: white;
+    font-size:x-large;
+}
