@@ -10,3 +10,8 @@
     color: white;
     font-size:x-large;
 }
+
+.list-group{
+    display:flex;
+    flex-direction: column;
+}

@@ -8,7 +8,6 @@ function search() {
         .then(function (data) {
             console.log(data);
         });
-
 };
 
 $(".btn").on("click", search);
