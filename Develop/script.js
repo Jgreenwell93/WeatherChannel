@@ -61,7 +61,7 @@ function mainForecast(icons, temps, humid, wind, uv) {
     $(".mainweather").empty(".mainweather")
 
     $(".mainWeather").append(`
-    <div class=currentForecast>
+    <div class=currentCity>
 <h>${todayDate}</h>
 <img src='http://openweathermap.org/img/wn/${icons}@2x.png' alt="weathericon">
 <p>Temperature:${temps}°F</p>
