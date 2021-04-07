@@ -23,18 +23,24 @@ function search() {
             console.log(err);
         });
 
-
 };
 
 // uses the lat and long variable to pull up complete information
 function oneSearch(lat, lon) {
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=daa1ac9179b64017705840dffa558075`)
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=daa1ac9179b64017705840dffa558075`)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             console.log(data);
+            var icons=data['current']['weather'][0]['icon'];
+            var temps=data['current']['temp'];
+            var humid=data['current']['humidity'];
+            var wind=data['current']['wind_speed'];
+            var uv=data['current']['uvi'];
+            mainForecast(icons,temps,humid,wind,uv);
         })
+       
 
 };
 
@@ -43,9 +49,17 @@ function oneSearch(lat, lon) {
 
 
 // puts fetched data into the main forcast
-// function mainForecast(){
+function mainForecast(icons,temps,humid,wind,uv){
+$(".mainWeather").append(`
+<h>${todayDate}</h>
+<img src='http://openweathermap.org/img/wn/${icons}@2x.png' alt="weathericon">
+<p>Temperature:${temps}°F</p>
+<p>Humidity:${humid}%</p>
+<p>Wind Speed:${wind}MPH</p>
+<p>UV Index:${uv}</p>
 
-// };
+`)
+};
 
 // function updateCards(){
 //     for (var i = 0; i < 4; i++){
