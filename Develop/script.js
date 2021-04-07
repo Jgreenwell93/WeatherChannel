@@ -33,14 +33,22 @@ function oneSearch(lat, lon) {
         })
         .then(function (data) {
             console.log(data);
-            var icons=data['current']['weather'][0]['icon'];
-            var temps=data['current']['temp'];
-            var humid=data['current']['humidity'];
-            var wind=data['current']['wind_speed'];
-            var uv=data['current']['uvi'];
-            mainForecast(icons,temps,humid,wind,uv);
+            // current
+            var icons = data['current']['weather'][0]['icon'];
+            var temps = data['current']['temp'];
+            var humid = data['current']['humidity'];
+            var wind = data['current']['wind_speed'];
+            var uv = data['current']['uvi'];
+            // future forecasts
+            // var ficons = data['daily'][i]['weather'][0]['icon'];
+            // var ftemps = data['daily'][i]['temp'];
+            // var fhumid = data['daily'][i]['humidity'];
+            // var fwind = data['daily'][i]['wind_speed'];
+            // var fuv = data['daily'][i]['uvi'];
+            mainForecast(icons, temps, humid, wind, uv);
+            // updateCards(ficons, ftemps, fhumid, fwind, fuv);
         })
-       
+
 
 };
 
@@ -49,21 +57,35 @@ function oneSearch(lat, lon) {
 
 
 // puts fetched data into the main forcast
-function mainForecast(icons,temps,humid,wind,uv){
-$(".mainWeather").append(`
+function mainForecast(icons, temps, humid, wind, uv) {
+    $(".mainweather").empty(".mainweather")
+
+    $(".mainWeather").append(`
+    <div class=currentForecast>
 <h>${todayDate}</h>
 <img src='http://openweathermap.org/img/wn/${icons}@2x.png' alt="weathericon">
 <p>Temperature:${temps}°F</p>
 <p>Humidity:${humid}%</p>
 <p>Wind Speed:${wind}MPH</p>
 <p>UV Index:${uv}</p>
+</div>
 
 `)
 };
 
-// function updateCards(){
-//     for (var i = 0; i < 4; i++){
-//         $(".forecast").add()
+// function updateCards(ficons, ftemps, fhumid, fwind, fuv) {
+    
+//     for (var i = 1; i < 5; i++) {
+//         $(".forecast").append(`
+//         <div class=forecastCards>
+//         <h>${moment().add(i, 'days').format('dddd M/D')}</h>
+// <img src='http://openweathermap.org/img/wn/${ficons}@2x.png' alt="weathericon">
+// <p>Temperature:${ftemps}°F</p>
+// <p>Humidity:${fhumid}%</p>
+// <p>Wind Speed:${fwind}MPH</p>
+// <p>UV Index:${fuv}</p>
+//         </div>
+//         `)
 //     }
 // };
 
