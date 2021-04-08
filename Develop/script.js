@@ -16,6 +16,7 @@ function search() {
             var lat = data['city']['coord']['lat'];
             var lon = data['city']['coord']['lon'];
             oneSearch(lat, lon);
+            cityList(city);
 
         })
         // catches any fetch errors
@@ -48,9 +49,11 @@ function oneSearch(lat, lon) {
 
 };
 
-
-
-
+function cityList(city){
+    $('.cityList').append( `
+    <li class="cities list-group-item">${city}</li>
+    `);
+};
 
 // puts fetched data into the main forcast
 function mainForecast(icons, temps, humid, wind, uv) {
@@ -58,8 +61,8 @@ function mainForecast(icons, temps, humid, wind, uv) {
 
     $(".mainWeather").html(`
     <div class=currentCity>
-<h class="dates">${todayDate}</h>
-<img src='http://openweathermap.org/img/wn/${icons}@2x.png' alt="weathericon">
+<h class="mainDate">${todayDate}</h>
+<img class="mainImage" src='http://openweathermap.org/img/wn/${icons}@2x.png' alt="weathericon">
 <div class="currentBody">
 <p class="currentel">Temperature:${temps}°F</p>
 <p class="currentel">Humidity:${humid}%</p>
@@ -73,7 +76,7 @@ function mainForecast(icons, temps, humid, wind, uv) {
 
 function updateCards(data) {
     $(".forecast").empty();
-
+// creates cards for a 5 day forecast and fills it with data
     for (var i = 1; i < 6; i++) {
         var ficons = data[i]['weather'][0]['icon'];
         var ftempsh = data[i]['temp']['max'];
