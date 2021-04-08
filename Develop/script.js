@@ -74,7 +74,8 @@ function updateCards(data) {
 
     for (var i = 1; i < 6; i++) {
         var ficons = data[i]['weather'][0]['icon'];
-        var ftemps = data[i]['temp'];
+        var ftempsh = data[i]['temp']['max'];
+        var ftempsl = data[i]['temp']['min'];
         var fhumid = data[i]['humidity'];
         var fwind = data[i]['wind_speed'];
         var fuv = data[i]['uvi'];
@@ -82,7 +83,8 @@ function updateCards(data) {
         <div class="forecastCards card">
         <h>${moment().add(i, 'days').format('dddd M/D')}</h>
 <img src='http://openweathermap.org/img/wn/${ficons}@2x.png' alt="weathericon">
-<p>Temperature:${ftemps}°F</p>
+<p>Temperature High:${ftempsh}°F</p>
+<p>Temperature Low:${ftempsl}°F</p>
 <p>Humidity:${fhumid}%</p>
 <p>Wind Speed:${fwind}MPH</p>
 <p>UV Index:${fuv}</p>
