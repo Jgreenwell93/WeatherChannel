@@ -58,12 +58,14 @@ function mainForecast(icons, temps, humid, wind, uv) {
 
     $(".mainWeather").html(`
     <div class=currentCity>
-<h>${todayDate}</h>
+<h class="dates">${todayDate}</h>
 <img src='http://openweathermap.org/img/wn/${icons}@2x.png' alt="weathericon">
-<p>Temperature:${temps}°F</p>
-<p>Humidity:${humid}%</p>
-<p>Wind Speed:${wind}MPH</p>
-<p>UV Index:${uv}</p>
+<div class="currentBody">
+<p class="currentel">Temperature:${temps}°F</p>
+<p class="currentel">Humidity:${humid}%</p>
+<p class="currentel">Wind Speed:${wind}MPH</p>
+<p class="currentel">UV Index:${uv}</p>
+</div>
 </div>
 
 `)
@@ -81,7 +83,7 @@ function updateCards(data) {
         var fuv = data[i]['uvi'];
         $(".forecast").append(`
         <div class="forecastCards card">
-        <h>${moment().add(i, 'days').format('dddd M/D')}</h>
+        <h class="dates">${moment().add(i, 'days').format('dddd M/D')}</h>
 <img src='http://openweathermap.org/img/wn/${ficons}@2x.png' alt="weathericon">
 <p>Temperature High:${ftempsh}°F</p>
 <p>Temperature Low:${ftempsl}°F</p>
