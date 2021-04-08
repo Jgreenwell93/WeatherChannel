@@ -72,14 +72,14 @@ function mainForecast(icons, temps, humid, wind, uv) {
 function updateCards(data) {
     $(".forecast").empty();
 
-    for (var i = 1; i < 5; i++) {
+    for (var i = 1; i < 6; i++) {
         var ficons = data[i]['weather'][0]['icon'];
         var ftemps = data[i]['temp'];
         var fhumid = data[i]['humidity'];
         var fwind = data[i]['wind_speed'];
         var fuv = data[i]['uvi'];
         $(".forecast").append(`
-        <div class=forecastCards>
+        <div class="forecastCards card">
         <h>${moment().add(i, 'days').format('dddd M/D')}</h>
 <img src='http://openweathermap.org/img/wn/${ficons}@2x.png' alt="weathericon">
 <p>Temperature:${ftemps}°F</p>
