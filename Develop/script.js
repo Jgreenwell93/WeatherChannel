@@ -45,16 +45,9 @@ function oneSearch(lat, lon) {
             mainForecast(icons, temps, humid, wind, uv);
             updateCards(data["daily"]);
         })
-
-
+        
 };
 
-// makes a button from previously searched cities that can be clicked again to recall prev search. functionality in works
-function cityList(city){
-    $('.cityList').append( `
-    <li class="cities list-group-item">${city}</li>
-    `);
-};
 
 // puts fetched data into the main forcast
 function mainForecast(icons, temps, humid, wind, uv) {
@@ -97,6 +90,13 @@ function updateCards(data) {
         </div>
         `)
     }
+};
+
+// creates a list of buttons from previously searched cities that when clicked search again for that city
+function cityList(city){
+    $('.cityList').append( `
+    <li class="cities list-group-item">${city}</li>
+    `);
 };
 
 $(".btn").on("click", search);
