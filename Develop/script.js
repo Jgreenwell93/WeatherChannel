@@ -49,6 +49,7 @@ function oneSearch(lat, lon) {
 
 };
 
+// makes a button from previously searched cities that can be clicked again to recall prev search. functionality in works
 function cityList(city){
     $('.cityList').append( `
     <li class="cities list-group-item">${city}</li>

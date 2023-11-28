@@ -12,36 +12,33 @@
 </head>
 <body>
     <!-- header for page -->
-    <div>
-        <div class="jumbotron">
+    <div class="jumbotron">
           <h1 class="display-4">Weather Dashboard</h1>
-        </div>
       </div>
 
       <!-- search bar -->
-      <div class="input-group mb-3">
-          <h1 class="citySearch">Search for a City:</h1>
+      <div class="searchInput input-group mb-3">
+          <h1 class="citySearchHeader">Search by City:</h1>
         <input type="text" class="searchCity form-control" placeholder="San Diego" aria-label="Recipient's username" aria-describedby="button-addon2">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
         </div>
       </div>
 
-      <hr>
+      <br>
 
-      <ul class="cityList list-group">
+      <!-- list of previously searched cities that work as buttons to make another call for that city -->
+      <ul class="cityList">
 
       </ul>
 
-      <div class="list-group">
-
-
-      </div>
-
+      <!-- current day body element -->
       <div class="mainWeather">
-        <h1 class="currentCity"></h1>
+        <!-- where the current day information is passed into -->
+        <div class="currentCity"></div>
       </div>
 
+      <!-- rest of week cards body element -->
       <div class=forecast>
 
       </div>
