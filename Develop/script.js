@@ -45,7 +45,7 @@ function oneSearch(lat, lon) {
             mainForecast(icons, temps, humid, wind, uv);
             updateCards(data["daily"]);
         })
-        
+
 };
 
 
@@ -70,7 +70,7 @@ function mainForecast(icons, temps, humid, wind, uv) {
 
 function updateCards(data) {
     $(".forecast").empty();
-// creates cards for a 5 day forecast and fills it with data
+    // creates cards for a 5 day forecast and fills it with data
     for (var i = 1; i < 6; i++) {
         var ficons = data[i]['weather'][0]['icon'];
         var ftempsh = data[i]['temp']['max'];
@@ -93,8 +93,8 @@ function updateCards(data) {
 };
 
 // creates a list of buttons from previously searched cities that when clicked search again for that city
-function cityList(city){
-    $('.cityList').append( `
+function cityList(city) {
+    $('.cityList').append(`
     <li class="cities list-group-item">${city}</li>
     `);
 };
