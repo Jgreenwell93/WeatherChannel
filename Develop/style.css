@@ -49,6 +49,7 @@ html {
     background-color: rgba(150, 238, 238, 0.85);
     width: 80%;
     float:right;
+    display: none;
 }
 
 /* centers up the current day weather card */

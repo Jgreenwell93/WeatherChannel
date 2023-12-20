@@ -40,13 +40,20 @@ function oneSearch(lat, lon) {
             var humid = data['current']['humidity'];
             var wind = data['current']['wind_speed'];
             var uv = data['current']['uvi'];
-            // future forecasts
 
+            // future forecasts
             mainForecast(icons, temps, humid, wind, uv);
             updateCards(data["daily"]);
         })
+        .then(function () {
+            // Set the display of the element with class .currentCity to 'block'
+            document.querySelector('.currentCity').style.display = 'block';
+        })
+        .catch(function (error) {
+            console.error('Error fetching weather data:', error);
+        });
+}
 
-};
 
 
 // puts fetched data into the main forcast
