@@ -26,6 +26,29 @@ function search() {
 
 };
 
+// a second search function to search again when a city button is clicked
+function searchRepeat(city) {
+    // var city = $(this).parent().siblings(".searchCity").val();
+    console.log(city);
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=daa1ac9179b64017705840dffa558075`)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            // stores the lat and lon into a variable then calls the one search function while passing in the vars
+            var lat = data['city']['coord']['lat'];
+            var lon = data['city']['coord']['lon'];
+            oneSearch(lat, lon);
+
+        })
+        // catches any fetch errors
+        .catch(function (err) {
+            console.log(err);
+        });
+
+};
+
 // uses the lat and long variable to pull up complete information
 function oneSearch(lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=daa1ac9179b64017705840dffa558075`)
@@ -99,11 +122,24 @@ function updateCards(data) {
     }
 };
 
+
 // creates a list of buttons from previously searched cities that when clicked search again for that city
 function cityList(city) {
+    // Create a unique identifier for the button using the city name
+    var buttonId = city.replace(/\s+/g, ''); // Remove spaces for id
+    // Append a button and li element for the city
     $('.cityList').append(`
-    <li class="cities list-group-item">${city}</li>
+        <li class="cities list-group-item">
+            <button id="${buttonId}" class="searchAgainBtn">${city}</button>
+        </li>
     `);
-};
 
-$(".btn").on("click", search);
+    // Add an event listener for the dynamically created button
+    $(`#${buttonId}`).on("click", function () {
+        // Call the searchRepeat function with the selected city
+        searchRepeat(city);
+    });
+}
+
+// when the search button is pressed on the main search box, run the search fucntion
+$(".SearchBtn").on("click", search);

@@ -29,7 +29,7 @@ html {
 } */
 
 /* stylings for button that fires spi call */
-.btn{
+.SearchBtn{
     background-color: rgb(99, 214, 216);
 }
 
@@ -37,6 +37,18 @@ html {
 .cityList{
     display:flex;
     flex-direction: column;
+}
+
+.cities{
+    list-style-type: none;
+}
+
+.searchAgainBtn{
+    border-style: solid;
+    width: 10%;
+    float: left;
+    display: flex;
+    justify-content: center;
 }
 
 .dates{
@@ -84,15 +96,6 @@ html {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-.cities{
-    list-style-type: none;
-    border-style: solid;
-    width: 10%;
-    float: left;
-    display: flex;
-    justify-content: center;
 }
 
 .card {
