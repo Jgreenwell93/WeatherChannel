@@ -26,6 +26,30 @@ function search() {
 
 };
 
+// a second search function to search again when a city button is clicked
+function searchRepeat(city) {
+    // var city = $(this).parent().siblings(".searchCity").val();
+    console.log(city);
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=daa1ac9179b64017705840dffa558075`)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            // stores the lat and lon into a variable then calls the one search function while passing in the vars
+            var lat = data['city']['coord']['lat'];
+            var lon = data['city']['coord']['lon'];
+            oneSearch(lat, lon);
+            // cityList function removed from here because the button is already created for this search
+
+        })
+        // catches any fetch errors
+        .catch(function (err) {
+            console.log(err);
+        });
+
+};
+
 // uses the lat and long variable to pull up complete information
 function oneSearch(lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=daa1ac9179b64017705840dffa558075`)
@@ -40,13 +64,20 @@ function oneSearch(lat, lon) {
             var humid = data['current']['humidity'];
             var wind = data['current']['wind_speed'];
             var uv = data['current']['uvi'];
-            // future forecasts
 
+            // future forecasts
             mainForecast(icons, temps, humid, wind, uv);
             updateCards(data["daily"]);
         })
+        .then(function () {
+            // Set the display of the element with class .currentCity to 'block'
+            document.querySelector('.currentCity').style.display = 'block';
+        })
+        .catch(function (error) {
+            console.error('Error fetching weather data:', error);
+        });
+}
 
-};
 
 
 // puts fetched data into the main forcast
@@ -92,11 +123,24 @@ function updateCards(data) {
     }
 };
 
+
 // creates a list of buttons from previously searched cities that when clicked search again for that city
 function cityList(city) {
+    // create unique identifier for button using city name
+    var buttonId = city.replace(/\s+/g, ''); // Remove spaces for id
+    // Append a button and li element for the city
     $('.cityList').append(`
-    <li class="cities list-group-item">${city}</li>
+        <li class="cities list-group-item">
+            <button id="${buttonId}" class="searchAgainBtn">${city}</button>
+        </li>
     `);
-};
 
-$(".btn").on("click", search);
+    // add event listener for dynamically created button
+    $(`#${buttonId}`).on("click", function () {
+        // Call the searchRepeat function with the selected city
+        searchRepeat(city);
+    });
+}
+
+// when the search button is pressed on the main search box, run the search fucntion
+$(".SearchBtn").on("click", search);
