@@ -40,6 +40,7 @@ function searchRepeat(city) {
             var lat = data['city']['coord']['lat'];
             var lon = data['city']['coord']['lon'];
             oneSearch(lat, lon);
+            // cityList function removed from here because the button is already created for this search
 
         })
         // catches any fetch errors
