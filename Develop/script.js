@@ -126,7 +126,7 @@ function updateCards(data) {
 
 // creates a list of buttons from previously searched cities that when clicked search again for that city
 function cityList(city) {
-    // Create a unique identifier for the button using the city name
+    // create unique identifier for button using city name
     var buttonId = city.replace(/\s+/g, ''); // Remove spaces for id
     // Append a button and li element for the city
     $('.cityList').append(`
@@ -135,7 +135,7 @@ function cityList(city) {
         </li>
     `);
 
-    // Add an event listener for the dynamically created button
+    // add event listener for dynamically created button
     $(`#${buttonId}`).on("click", function () {
         // Call the searchRepeat function with the selected city
         searchRepeat(city);
