@@ -28,7 +28,7 @@ html {
     
 } */
 
-/* stylings for button that fires spi call */
+/* stylings for button that fires api call */
 .SearchBtn{
     background-color: rgb(99, 214, 216);
 }
@@ -44,7 +44,6 @@ html {
 }
 
 .searchAgainBtn{
-    border-style: solid;
     width: 10%;
     float: left;
     display: flex;
@@ -70,12 +69,25 @@ html {
     justify-content: center;
 }
 
+/* city heading title */
+.cityHead{
+    display: flex;
+    justify-content: center;
+    font-size: xxx-large;
+}
 
 /* curent day weather info positioning and styles */
 .mainDate{
     display: flex;
     justify-content: center;
     font-size: x-large;
+}
+
+.mainWeath{
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    padding-top: 2vh;
 }
 
 
@@ -96,6 +108,11 @@ html {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+/* styling for specifically the future general weather */
+.futureWeath{
+    font-size: larger;
 }
 
 .card {
