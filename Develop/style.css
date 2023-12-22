@@ -45,13 +45,28 @@ html {
 }
 
 /* positioning for city search box */
-/* .searchInput{
-    
-} */
+.searchInputArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ositioning of search bar elements */
+.searchBar{
+    display: flex;
+    flex-direction: row;
+}
 
 /* stylings for button that fires api call */
-.SearchBtn{
-    background-color: rgb(99, 214, 216);
+.searchBtn{
+    background-color: rgb(166, 242, 243);
+    cursor: pointer;
+    
+}
+
+/* darkers the search button on hover */
+.searchBtn:hover{
+    background: rgb(111, 207, 209);
 }
 
 /* hides the city list staging area until changed in JS */
@@ -73,13 +88,15 @@ html {
 /* removes bullet points from city list */
 .cities{
     list-style-type: none;
+    margin-bottom: .8vh;
 }
 
 /* stylings for the city list buttons */
 .searchAgainBtn{
-    width: 30%;
+    width: 35%;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 /* stylings for dates on future weather cards */
