@@ -77,7 +77,7 @@ html {
 
 /* stylings for the city list buttons */
 .searchAgainBtn{
-    width: 10%;
+    width: 30%;
     display: flex;
     justify-content: center;
 }

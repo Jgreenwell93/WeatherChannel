@@ -166,8 +166,10 @@ function cityList(city) {
     // create unique identifier for button using city name
     var buttonId = city.replace(/\s+/g, ''); // Remove spaces for id
 
-    // capitalize the first char of the city for grammar
-    var capitalizedCity = city.charAt(0).toUpperCase() + city.slice(1);
+    // capitalize the first char of each word in city for grammar
+    var cities = city.split(" ");
+    var capitalizedCity = cities.map(city => city.charAt(0).toUpperCase() + city.slice(1)).join(" ");
+
 
     // Append a button and li element for the city
     $('.cityList').append(`
