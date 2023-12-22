@@ -19,38 +19,56 @@
     <h1 class="display-4">Weather Dashboard</h1>
   </div>
 
-  <!-- search bar -->
-  <div class="searchInput input-group mb-3">
-    <h1 class="citySearchHeader">Search by City:</h1>
-    <input type="text" class="searchCity form-control" placeholder="San Diego" aria-label="Recipient's username"
-      aria-describedby="button-addon2">
-    <div class="input-group-append">
-      <button class="SearchBtn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+  <!-- nesting the main application body into a single div for flexbox purposes -->
+  <div class="applicationStage">
+
+    <!-- main seach stage area with search bar and previous searches -->
+    <div class="searchArea">
+
+      <!-- search bar -->
+      <div class="searchInput input-group mb-3">
+        <h1 class="citySearchHeader">Search by City:</h1>
+        <input type="text" class="searchCity form-control" placeholder="San Diego" aria-label="Recipient's username"
+          aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="SearchBtn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+        </div>
+      </div>
+
+      <br>
+
+      <!-- list of previously searched cities that work as buttons to make another call for that city -->
+      <div class="cityListStage">
+
+        <ul class="cityList">
+          <!-- header element -->
+          <h4 class="cityListHeader">Recent Searches</h4>
+
+        </ul>
+      </div>
+
     </div>
-  </div>
 
-  <br>
 
-  <!-- list of previously searched cities that work as buttons to make another call for that city -->
-  <div class="cityListStage">
 
-    <ul class="cityList">
-      <!-- header element -->
-      <h4 class="cityListHeader">Recent Searches</h4>
+    <!-- main stage area for where all weather cards and information will be populated to -->
+    <div class="informationArea">
 
-    </ul>
-  </div>
+      <!-- current day body element -->
+      <div class="mainWeather">
+        <!-- where the current day information is passed into -->
+        <div class="currentCity"></div>
+      </div>
 
-  <!-- current day body element -->
-  <div class="mainWeather">
-    <!-- where the current day information is passed into -->
-    <div class="currentCity"></div>
-  </div>
+      <!-- rest of week cards body element -->
+      <div class=forecast>
 
-  <!-- rest of week cards body element -->
-  <div class=forecast>
+      </div>
+
+    </div>
 
   </div>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>

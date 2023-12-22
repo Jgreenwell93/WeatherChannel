@@ -23,6 +23,27 @@ html {
     font-size:x-large;
 }
 
+/* putting the whole application into a row to have left and right columns */
+.applicationStage{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3vh;
+}
+
+/* flex direction positioning for search stage area */
+.searchArea{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+/* flex direction positioning for main weather information stage area */
+.informationArea{
+    display: flex;
+    flex-direction: column;
+    width:100%
+}
+
 /* positioning for city search box */
 /* .searchInput{
     
@@ -61,10 +82,12 @@ html {
     justify-content: center;
 }
 
+/* stylings for dates on future weather cards */
 .dates{
     font-size: x-large;
 }
 
+/* stylings for main weather card for current city */
 .currentCity{
     border-style: solid;
     border-color: black;
@@ -94,6 +117,7 @@ html {
     font-size: x-large;
 }
 
+/* stylings for current weather description on current forecast */
 .mainWeath{
     display: flex;
     justify-content: center;
@@ -102,6 +126,7 @@ html {
 }
 
 
+/* stylings for the main body of current weather card information */
 .currentBody{
     display: flex;
     flex-direction: row;
@@ -109,6 +134,7 @@ html {
     justify-content: space-evenly;
 }
 
+/* stylings for each element of information in current weather card */
 .currentel{
     margin:1%;
 }
@@ -126,6 +152,7 @@ html {
     font-size: larger;
 }
 
+/* stylings for future weather cards */
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
