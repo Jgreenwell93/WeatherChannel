@@ -181,6 +181,9 @@ function cityList(city) {
         // Call the searchRepeat function with the selected city
         searchRepeat(city);
     });
+
+    // unhides the city search area for previous searches.
+    document.querySelector('.cityListStage').style.display = 'block';
 }
 
 // when the search button is pressed on the main search box, run the search fucntion

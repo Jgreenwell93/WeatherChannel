@@ -33,19 +33,30 @@ html {
     background-color: rgb(99, 214, 216);
 }
 
+/* hides the city list staging area until changed in JS */
+.cityListStage{
+    display: none;
+}
+
+/*stylings for city list stage header*/
+/* .cityListHeader{
+    
+} */
+
 /* stylings for list of previously searched cities */
 .cityList{
     display:flex;
     flex-direction: column;
 }
 
+/* removes bullet points from city list */
 .cities{
     list-style-type: none;
 }
 
+/* stylings for the city list buttons */
 .searchAgainBtn{
     width: 10%;
-    float: left;
     display: flex;
     justify-content: center;
 }
