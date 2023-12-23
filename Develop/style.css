@@ -111,6 +111,7 @@ html {
     width: 80%;
     float:right;
     display: none;
+    width: 95%;
 }
 
 /* centers up the current day weather card */
@@ -159,8 +160,10 @@ html {
 .forecast{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-self: center;
     flex-wrap: wrap;
+    justify-content: space-between;
+    width: 95%;
 }
 
 /* styling for specifically the future general weather */

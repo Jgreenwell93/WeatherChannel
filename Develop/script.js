@@ -189,4 +189,4 @@ function cityList(city) {
 }
 
 // when the search button is pressed on the main search box, run the search fucntion
-$(".SearchBtn").on("click", search);
+$(".searchBtn").on("click", search);
