@@ -8,6 +8,8 @@
   <title>Weather App</title>
   <link href="assets/reset.css">
   <link href="assets/normalize.css">
+  <!-- stylesheet for submit button icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="Bootstrap" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <link href="Develop/style.css" rel="stylesheet">
@@ -19,33 +21,68 @@
     <h1 class="display-4">Weather Dashboard</h1>
   </div>
 
-  <!-- search bar -->
-  <div class="searchInput input-group mb-3">
-    <h1 class="citySearchHeader">Search by City:</h1>
-    <input type="text" class="searchCity form-control" placeholder="San Diego" aria-label="Recipient's username"
-      aria-describedby="button-addon2">
-    <div class="input-group-append">
-      <button class="SearchBtn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+  <!-- nesting the main application body into a single div for flexbox purposes -->
+  <div class="applicationStage">
+
+    <!-- main seach stage area with search bar and previous searches -->
+    <div class="searchArea">
+
+      <!-- search bar -->
+      <div class="searchInputArea input-group mb-3">
+
+        <!-- search input area header -->
+        <h1 class="citySearchHeader">Search by City:</h1>
+
+        <!-- search bar elements/input and button -->
+        <div class="searchBar">
+
+          <!-- input area -->
+          <input type="text" class="searchCity form-control" placeholder="San Diego" aria-label="Recipient's username"
+            aria-describedby="button-addon2">
+
+          <!-- search button -->
+          <div class="input-group-append">
+            <button class="searchBtn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <br>
+
+      <!-- list of previously searched cities that work as buttons to make another call for that city -->
+      <div class="cityListStage">
+
+        <ul class="cityList">
+          <!-- header element -->
+          <h4 class="cityListHeader">Recent Searches</h4>
+
+        </ul>
+      </div>
+
     </div>
+
+
+
+    <!-- main stage area for where all weather cards and information will be populated to -->
+    <div class="informationArea">
+
+      <!-- current day body element -->
+      <div class="mainWeather">
+        <!-- where the current day information is passed into -->
+        <div class="currentCity"></div>
+      </div>
+
+      <!-- rest of week cards body element -->
+      <div class=forecast>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <br>
-
-  <!-- list of previously searched cities that work as buttons to make another call for that city -->
-  <ul class="cityList">
-
-  </ul>
-
-  <!-- current day body element -->
-  <div class="mainWeather">
-    <!-- where the current day information is passed into -->
-    <div class="currentCity"></div>
-  </div>
-
-  <!-- rest of week cards body element -->
-  <div class=forecast>
-
-  </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>

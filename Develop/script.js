@@ -166,8 +166,10 @@ function cityList(city) {
     // create unique identifier for button using city name
     var buttonId = city.replace(/\s+/g, ''); // Remove spaces for id
 
-    // capitalize the first char of the city for grammar
-    var capitalizedCity = city.charAt(0).toUpperCase() + city.slice(1);
+    // capitalize the first char of each word in city for grammar
+    var cities = city.split(" ");
+    var capitalizedCity = cities.map(city => city.charAt(0).toUpperCase() + city.slice(1)).join(" ");
+
 
     // Append a button and li element for the city
     $('.cityList').append(`
@@ -181,7 +183,10 @@ function cityList(city) {
         // Call the searchRepeat function with the selected city
         searchRepeat(city);
     });
+
+    // unhides the city search area for previous searches.
+    document.querySelector('.cityListStage').style.display = 'block';
 }
 
 // when the search button is pressed on the main search box, run the search fucntion
-$(".SearchBtn").on("click", search);
+$(".searchBtn").on("click", search);

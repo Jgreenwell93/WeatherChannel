@@ -23,15 +23,60 @@ html {
     font-size:x-large;
 }
 
+/* putting the whole application into a row to have left and right columns */
+.applicationStage{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3vh;
+}
+
+/* flex direction positioning for search stage area */
+.searchArea{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+/* flex direction positioning for main weather information stage area */
+.informationArea{
+    display: flex;
+    flex-direction: column;
+    width:100%
+}
+
 /* positioning for city search box */
-/* .searchInput{
-    
-} */
+.searchInputArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ositioning of search bar elements */
+.searchBar{
+    display: flex;
+    flex-direction: row;
+}
 
 /* stylings for button that fires api call */
-.SearchBtn{
-    background-color: rgb(99, 214, 216);
+.searchBtn{
+    background-color: rgb(166, 242, 243);
+    cursor: pointer;
 }
+
+/* darkers the search button on hover */
+.searchBtn:hover{
+    background: rgb(111, 207, 209);
+}
+
+/* hides the city list staging area until changed in JS */
+.cityListStage{
+    display: none;
+}
+
+/*stylings for city list stage header*/
+/* .cityListHeader{
+    
+} */
 
 /* stylings for list of previously searched cities */
 .cityList{
@@ -39,21 +84,26 @@ html {
     flex-direction: column;
 }
 
+/* removes bullet points from city list */
 .cities{
     list-style-type: none;
+    margin-bottom: .8vh;
 }
 
+/* stylings for the city list buttons */
 .searchAgainBtn{
-    width: 10%;
-    float: left;
+    width: 35%;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
+/* stylings for dates on future weather cards */
 .dates{
     font-size: x-large;
 }
 
+/* stylings for main weather card for current city */
 .currentCity{
     border-style: solid;
     border-color: black;
@@ -61,6 +111,7 @@ html {
     width: 80%;
     float:right;
     display: none;
+    width: 95%;
 }
 
 /* centers up the current day weather card */
@@ -83,6 +134,7 @@ html {
     font-size: x-large;
 }
 
+/* stylings for current weather description on current forecast */
 .mainWeath{
     display: flex;
     justify-content: center;
@@ -91,6 +143,7 @@ html {
 }
 
 
+/* stylings for the main body of current weather card information */
 .currentBody{
     display: flex;
     flex-direction: row;
@@ -98,6 +151,7 @@ html {
     justify-content: space-evenly;
 }
 
+/* stylings for each element of information in current weather card */
 .currentel{
     margin:1%;
 }
@@ -106,8 +160,10 @@ html {
 .forecast{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-self: center;
     flex-wrap: wrap;
+    justify-content: space-between;
+    width: 95%;
 }
 
 /* styling for specifically the future general weather */
@@ -115,6 +171,7 @@ html {
     font-size: larger;
 }
 
+/* stylings for future weather cards */
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
