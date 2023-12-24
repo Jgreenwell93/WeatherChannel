@@ -148,12 +148,14 @@ function updateCards(data) {
         <div class="forecastCards card">
         <h class="dates forecast-card-info">${moment().add(i, 'days').format('dddd M/D')}</h>
 <img src='http://openweathermap.org/img/wn/${ficons}@2x.png' alt="weathericon">
+<div class="forecast-card-info"
 <p class="futureWeath forecast-card-info">${capitalizedfWeath}</p>
-<p class="forecast-card-info">Temperature High: ${ftempsh}°F</p>
-<p class="forecast-card-info">Temperature Low: ${ftempsl}°F</p>
-<p class="forecast-card-info">Humidity: ${fhumid}%</p>
-<p class="forecast-card-info">Wind Speed: ${fwind}MPH</p>
-<p class="forecast-card-info">UV Index: ${fuv}</p>
+<p>Temperature High: ${ftempsh}°F</p>
+<p>Temperature Low: ${ftempsl}°F</p>
+<p>Humidity: ${fhumid}%</p>
+<p>Wind Speed: ${fwind}MPH</p>
+<p>UV Index: ${fuv}</p>
+</div>
         </div>
         `)
     }
