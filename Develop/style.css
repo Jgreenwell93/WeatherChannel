@@ -103,6 +103,11 @@ html {
     font-size: x-large;
 }
 
+/* stylings and positioning for forcast card info */
+.forecast-card-info{
+    padding-left: 2vw;
+}
+
 /* stylings for main weather card for current city */
 .currentCity{
     border-style: solid;
@@ -162,7 +167,6 @@ html {
     flex-direction: row;
     align-self: center;
     flex-wrap: wrap;
-    justify-content: space-between;
     width: 95%;
 }
 
