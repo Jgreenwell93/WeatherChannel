@@ -1,7 +1,9 @@
+/* global stylings */
 *{
     font-weight: bold;
 }
 
+/* setting background image to html document */
 html { 
     background: url("/images/background-photo-2.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
